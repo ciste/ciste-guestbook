@@ -1,0 +1,1 @@
+(ns ciste-guestbook.core)
