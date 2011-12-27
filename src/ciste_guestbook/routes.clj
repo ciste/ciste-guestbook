@@ -1,14 +1,15 @@
 (ns ciste-guestbook.routes
   (:use (ciste [routes :only [make-matchers resolve-routes]]))
-  (:require )
-  )
+  (:require (ciste [predicates :as pred])
+            (ciste-guestbook.actions [comment-actions :as comment])
+            (ring.middleware [stacktrace :as stacktrace])))
 
 (def main-routes
   (make-matchers
    ;; Add http routes here. in the form [[method path] action]
    [
     [[:get "/"]         #'comment/index]
-    [[:post "/"]        #'comment'post]
+    [[:post "/"]        #'comment/post]
     [[:delete "/:id"]   #'comment/delete]
     ]))
 
