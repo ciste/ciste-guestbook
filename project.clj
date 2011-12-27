@@ -1,3 +1,6 @@
 (defproject ciste-guestbook "1.0.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :dependencies [[org.clojure/clojure "1.3.0"]])
+  :description "Guestbook example for Ciste"
+  :dependencies [[org.clojure/clojure "1.3.0"]
+                 [ciste "0.2.0-SNAPSHOT"]
+                 ]
+  :main ciste-guestbook.core)
