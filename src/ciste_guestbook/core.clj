@@ -5,7 +5,7 @@
 (defn start
   "Start the application"
   ([]
-     (start))
+     (start "--env" "development"))
   ([& args]
      ;; TODO: Much of this will probably be abstracted away in the future
      (let [opts (apply hash-map args)

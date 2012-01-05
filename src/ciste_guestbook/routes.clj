@@ -1,7 +1,10 @@
 (ns ciste-guestbook.routes
-  (:use (ciste [routes :only [make-matchers resolve-routes]]))
+  (:use (ciste [middleware :only [wrap-http-serialization]]
+               [routes :only [make-matchers resolve-routes]])
+        (compojure [core :only [defroutes]]))
   (:require (ciste [predicates :as pred])
             (ciste-guestbook.actions [comment-actions :as comment])
+            (compojure [handler :as handler])
             (ring.middleware [stacktrace :as stacktrace])))
 
 (def main-routes
@@ -33,7 +36,7 @@
 
       ;; All of the routes coming through here will be using the :http
       ;; serialization type
-      middleware/wrap-http-serialization
+      wrap-http-serialization
 
       ;; Show a helpful error page
       stacktrace/wrap-stacktrace
