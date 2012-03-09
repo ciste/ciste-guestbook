@@ -1,5 +1,6 @@
 (ns ciste-guestbook.routes
-  (:use (ciste [middleware :only [wrap-http-serialization]]
+  (:use (aleph [http :only [wrap-ring-handler]])
+        (ciste [middleware :only [wrap-http-serialization]]
                [routes :only [make-matchers resolve-routes]])
         (compojure [core :only [defroutes]]))
   (:require (ciste [predicates :as pred])
@@ -40,5 +41,7 @@
 
       ;; Show a helpful error page
       stacktrace/wrap-stacktrace
+
+      wrap-ring-handler
       )
   )

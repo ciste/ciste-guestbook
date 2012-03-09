@@ -4,7 +4,7 @@
 
 (defaction index
   []
-  
+  true
   )
 
 (defaction post

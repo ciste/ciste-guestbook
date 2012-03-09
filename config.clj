@@ -6,6 +6,8 @@
   :http
   {
    :port 8080
+   :handler "ciste-guestbook.routes/app"
+   :websocket false
    }
   :print
   {
@@ -15,6 +17,7 @@
    :request false
    :routes false
    }
+  :swank {:port 4015}
   :triggers
   {
    :thread-count 1
