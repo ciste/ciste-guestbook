@@ -1,5 +1,5 @@
 (ns ciste-guestbook.views.comment-views
-  (:use (ciste [views :only [defview]])
+  (:use [ciste.views :only [defview]]
         ciste-guestbook.actions.comment-actions))
 
 (defview #'index :html

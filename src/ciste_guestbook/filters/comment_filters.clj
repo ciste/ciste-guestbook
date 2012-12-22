@@ -1,5 +1,5 @@
 (ns ciste-guestbook.filters.comment-filters
-  (:use (ciste [filters :only [deffilter]])
+  (:use [ciste.filters :only [deffilter]]
         ciste-guestbook.actions.comment-actions))
 
 (deffilter #'index :http

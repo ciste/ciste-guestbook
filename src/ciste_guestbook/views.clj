@@ -1,7 +1,6 @@
 (ns ciste-guestbook.views
-  (:use (ciste [core :only [serialize-as]]))
-  (:require (hiccup [core :as h]))
-  )
+  (:use [ciste.core :only [serialize-as]])
+  (:require [hiccup.core :as h]))
 
 ;; (defmethod apply-template :html
 ;;   [request response]

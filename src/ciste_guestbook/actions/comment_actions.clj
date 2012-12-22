@@ -1,6 +1,6 @@
 (ns ciste-guestbook.actions.comment-actions
-  (:use (ciste [core :only [defaction]]
-               [config :only [definitializer]])))
+  (:use [ciste.config :only [definitializer]]
+        [ciste.core :only [defaction]]))
 
 (defaction index
   []
@@ -9,12 +9,12 @@
 
 (defaction post
   [comment]
-  
+
   )
 
 (defaction delete
   [id]
-  
+
   )
 
 (definitializer

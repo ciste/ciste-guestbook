@@ -1,12 +1,12 @@
 (ns ciste-guestbook.routes
-  (:use (aleph [http :only [wrap-ring-handler]])
-        (ciste [middleware :only [wrap-http-serialization]]
-               [routes :only [make-matchers resolve-routes]])
-        (compojure [core :only [defroutes]]))
-  (:require (ciste [predicates :as pred])
-            (ciste-guestbook.actions [comment-actions :as comment])
-            (compojure [handler :as handler])
-            (ring.middleware [stacktrace :as stacktrace])))
+  (:use [aleph.http :only [wrap-ring-handler]]
+        [ciste.middleware :only [wrap-http-serialization]]
+        [ciste.routes :only [make-matchers resolve-routes]]
+        [compojure.core :only [defroutes]])
+  (:require [ciste.predicates :as pred]
+            [ciste-guestbook.actions.comment-actions :as comment]
+            [compojure.handler :as handler]
+            [ring.middleware.stacktrace :as stacktrace]))
 
 (def main-routes
   (make-matchers
