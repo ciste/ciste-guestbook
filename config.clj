@@ -9,6 +9,7 @@
    :handler "ciste-guestbook.routes/app"
    :websocket false
    }
+  :modules []
   :print
   {
    :actions true
@@ -17,6 +18,7 @@
    :request false
    :routes false
    }
+  :services []
   :swank {:port 4015}
   :triggers
   {
@@ -31,7 +33,7 @@
    :request false
    }
   }
- 
+
  :development
  {
   :print
